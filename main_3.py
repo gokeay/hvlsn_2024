@@ -2,17 +2,77 @@ import time
 from transformers import T5ForConditionalGeneration, RobertaTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM, AutoTokenizer, T5Tokenizer
 import torch
 
-konum = "weights_all_models/Salesforce_codet5p-770m-py"
-
-# Model ve tokenizer'ı yükle
-tokenizer = RobertaTokenizer.from_pretrained(konum)
-model = T5ForConditionalGeneration.from_pretrained(konum)
+tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
+model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base-codexglue-sum-javascript")
 
 ## Özetlenecek kod girilir
 code = """
 
-write javascript function to calculate the sum of given two numbers
+function calculateSquares(numbers) {
+    const result = {};
+
+    numbers.forEach(number => {
+        if (typeof number === 'number') {
+            result[number] = number * number;
+        } else {
+            console.warn(`${number} is not a number`);
+        }
+    });
+
+    return result;
+}
+
+console.log(squares);
 """
+
+# code = """
+
+# // program to find the largest among three numbers
+
+# // take input from the user
+# const num1 = parseFloat(prompt("Enter first number: "));
+# const num2 = parseFloat(prompt("Enter second number: "));
+# const num3 = parseFloat(prompt("Enter third number: "));
+# let largest;
+
+# // check the condition
+# if(num1 >= num2 && num1 >= num3) {
+#     largest = num1;
+# }
+# else if (num2 >= num1 && num2 >= num3) {
+#     largest = num2;
+# }
+# else {
+#     largest = num3;
+# }
+
+# // display the result
+# console.log("The largest number is " + largest);
+
+# """
+
+
+# code = """
+
+# const num1 = parseFloat(prompt("Enter first number: "));
+# const num2 = parseFloat(prompt("Enter second number: "));
+# const num3 = parseFloat(prompt("Enter third number: "));
+# let largest;
+
+# if(num1 >= num2 && num1 >= num3) {
+#     largest = num1;
+# }
+# else if (num2 >= num1 && num2 >= num3) {
+#     largest = num2;
+# }
+# else {
+#     largest = num3;
+# }
+
+# console.log("The largest number is " + largest);
+
+# """
+
 
 print("\n\n")
 

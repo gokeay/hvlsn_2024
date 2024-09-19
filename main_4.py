@@ -2,28 +2,26 @@ import time
 from transformers import T5ForConditionalGeneration, RobertaTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM, AutoTokenizer, T5Tokenizer
 import torch
 
-tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
-model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base-codexglue-sum-javascript")
+konum = "weights_all_models/Salesforce_codet5p-770m-py"
+
+# Model ve tokenizer'ı yükle
+tokenizer = RobertaTokenizer.from_pretrained(konum)
+model = T5ForConditionalGeneration.from_pretrained(konum)
 
 ## Özetlenecek kod girilir
 code = """
 
-function calculateSquares(numbers) {
-    const result = {};
+write javascript function to calculate the sum of given two numbers
 
-    numbers.forEach(number => {
-        if (typeof number === 'number') {
-            result[number] = number * number;
-        } else {
-            console.warn(`${number} is not a number`);
-        }
-    });
-
-    return result;
-}
-
-console.log(squares);
 """
+
+# code = """
+
+# Function that takes a temperature in Celsius as input from theuser and converts it to Fahrenheit.
+# The program should print the converted temperature with an appropriate message.
+
+# """
+
 
 print("\n\n")
 
