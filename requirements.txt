@@ -47,9 +47,9 @@ six==1.16.0
 smmap==5.0.1
 sympy==1.13.2
 tokenizers==0.19.1
-torch==2.4.1
-torchaudio==2.4.1
-torchvision==0.19.1
+torch==2.4.1+cu124
+torchaudio==2.4.1+cu124
+torchvision==0.19.1+cu124
 tqdm==4.66.5
 transformers @ git+https://github.com/huggingface/transformers@8bd2b1e8c23234cd607ca8d63f53c1edfea27462
 typing_extensions==4.12.2
