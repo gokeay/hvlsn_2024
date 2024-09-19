@@ -56,3 +56,4 @@ Proje boyunca toplamda 3 **CodeT5** ve 1 **CodeT5+** modeli incelenmiştir. Bu m
 ## Notlar
 1. Her model dosyasında, örnek kodlar yorum satırları içerisinde bulunabilir.
 2. **model_1** ağırlıkları, ilgili Github bağlantısı aracılığıyla indirilmelidir.
+3. Modeli javascript özelinde eğitmek için 60k javascript ve özet içeriği: https://huggingface.co/datasets/google/code_x_glue_ct_code_to_text/viewer/javascript?row=7
