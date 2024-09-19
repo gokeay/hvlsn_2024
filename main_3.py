@@ -2,8 +2,8 @@ import time
 from transformers import T5ForConditionalGeneration, RobertaTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM, AutoTokenizer, T5Tokenizer
 import torch
 
-tokenizer = RobertaTokenizer.from_pretrained("Salesforce/codet5-base")
-model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base-codexglue-sum-javascript")
+tokenizer = RobertaTokenizer.from_pretrained("Salesforce_codet5-base")
+model = T5ForConditionalGeneration.from_pretrained("Salesforce_codet5-base-codexglue-sum-javascript")
 
 ## Özetlenecek kod girilir
 code = """
